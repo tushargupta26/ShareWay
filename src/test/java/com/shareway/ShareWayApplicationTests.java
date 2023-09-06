@@ -1,4 +1,4 @@
-package com.shareway.ShareWay;
+package com.shareway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
