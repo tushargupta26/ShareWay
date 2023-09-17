@@ -1,13 +1,13 @@
 package com.shareWay.model;
 
-import com.shareWay.model.enumerations.Gender;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 // Name, userID, password, gender, DOB, email, phone number, userRating
 @Entity
-@Table(name = "USER")
+@Table(name = "USERS")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,17 @@ public class User {
     private String phoneNumber;
     private double rating;
     private String gender;
+    @OneToMany(targetEntity = JourneyDetails.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_fk", referencedColumnName = "id")
+    private List<JourneyDetails> journeyDetails;
+
+    public List<JourneyDetails> getJourneyDetails() {
+        return journeyDetails;
+    }
+
+    public void setJourneyDetails(List<JourneyDetails> journeyDetails) {
+        this.journeyDetails = journeyDetails;
+    }
 
     public String getGender() {
         return gender;

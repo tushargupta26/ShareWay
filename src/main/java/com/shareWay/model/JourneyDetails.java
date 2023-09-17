@@ -11,7 +11,8 @@ public class JourneyDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long userId;
+
+
     private Date startTime;
     private Date endTime;
     private String startingLocation;
@@ -29,13 +30,13 @@ public class JourneyDetails {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
+//    public Long getUserId() {
+//        return user.getId();
+//    }
+//
+//    public void setUserId(Long userId) {
+//        user.setId(userId);
+//    }
 
     public Date getStartTime() {
         return startTime;
