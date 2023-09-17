@@ -13,15 +13,15 @@ public class JourneyService {
     private final JourneyRepository journeyRepository;
 
     @Autowired
-    public JourneyService(JourneyRepository journeyRepository){
+    public JourneyService(JourneyRepository journeyRepository) {
         this.journeyRepository = journeyRepository;
     }
 
-    public JourneyDetails addJourney(JourneyDetails journeyDetails){
+    public JourneyDetails addJourney(JourneyDetails journeyDetails) {
         return journeyRepository.save(journeyDetails);
     }
 
-    public List<JourneyDetails> getAllJourneys(){
+    public List<JourneyDetails> getAllJourneys() {
         return journeyRepository.findAll();
     }
 }
