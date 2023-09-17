@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/shareWay/user")
 public class UserResource {
 
     private final UserService userService;

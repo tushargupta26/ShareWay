@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/journey")
+@RequestMapping("/shareWay/journey")
 public class JourneyResource {
     private JourneyService journeyService;
 
