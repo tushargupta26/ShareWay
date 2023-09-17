@@ -1,5 +1,6 @@
 package com.shareWay.model;
 
+import com.shareWay.model.enumerations.Gender;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -19,7 +20,7 @@ public class User {
     //    private Gender gender;
     private String phoneNumber;
     private double rating;
-    private String gender;
+    private Gender gender;
     @OneToMany(targetEntity = JourneyDetails.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_fk", referencedColumnName = "id")
     private List<JourneyDetails> journeyDetails;
@@ -32,11 +33,11 @@ public class User {
         this.journeyDetails = journeyDetails;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 

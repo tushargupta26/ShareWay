@@ -12,34 +12,19 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/shareWay")
-@ResponseBody
 public class ShareWayResource {
 
-    private final UserService userService;
-    private final JourneyService journeyService;
+    private final UserResource userResource;
+    private final JourneyResource journeyResource;
 
     @Autowired
-    public ShareWayResource(UserService userService, JourneyService journeyService){
-        this.userService = userService;
-        this.journeyService = journeyService;
+    public ShareWayResource(UserResource userResource, JourneyResource journeyResource){
+        this.userResource = userResource;
+        this.journeyResource = journeyResource;
     }
+
     @GetMapping(value = "/test", produces = MediaType.APPLICATION_JSON_VALUE)
     public String testController() {
         return "test";
-    }
-
-    @PostMapping(value = "/user")
-    public User addUser(@RequestBody User user){
-        return userService.createUser(user);
-    }
-
-    @GetMapping(value = "/allUsers")
-    public List<User> allUsers(){
-        return userService.getAllUsers();
-    }
-
-    @PostMapping(value = "/journey")
-    public JourneyDetails addJourney(JourneyDetails journeyDetails){
-        return journeyService.addJourney(journeyDetails);
     }
 }
